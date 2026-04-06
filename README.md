@@ -1,7 +1,8 @@
 # Install programs using brew
 
 ```
-curl -fsSL https://raw.githubusercontent.com/dubovsky-andrey/brew/main/Brewfile -o /tmp/Brewfile
+tmpfile="$(mktemp)"
+curl -fsSL https://raw.githubusercontent.com/dubovsky-andrey/brew/main/Brewfile -o "$tmpfile" && mv "$tmpfile" /tmp/Brewfile
 brew bundle --file=/tmp/Brewfile
 ```
 
